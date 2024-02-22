@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Professor Wanling Yang's Lab</title>
 	<style>
 		body {
@@ -15,19 +16,18 @@
 		.header {
   			color: black;
   			font-size: 20px;
+			display:block;
 		}
-		#headerText p {
-			margin: 0;
-			margin-top: 1em;
-			margin-bottom: 1em;
+		
+		#headerImg{
+			float: right;
+			padding-top:3em;
 		}
-		.header img{
-			padding-left: 2em;
-		}
+		
 		.header ul {
 			display: flex;
 			justify-content: right;
-			padding-top: 0.5em;
+			padding: 0em;
 		}
 		.header li {
   			display: inline;
@@ -49,15 +49,19 @@
 			border: 1.5px solid #95A92C;
 		}
 		
+		.mainText{
+			display:flex;
+		}
+		
 		/* Slideshow container */
 		.slideshow-container {
 			margin-top: 15em;
-			margin-left: 5em;
+			margin-left: 2em;
 			
 		}
 		.slideshow-container div {
-			width: 27em;
-			height: 17em;
+			width: 20em;
+			height: 12em;
 		}
 		/* The dots/bullets/indicators */
 		.dot {
@@ -81,42 +85,76 @@
 		  from {opacity: .4} 
 		  to {opacity: 1}
 		}
+		@media only screen and (max-width: 1200px) {
+			body {
+				background-color: lightblue;
+			}
+			.header ul {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+			}
+			.mainText{
+				display:block;
+			}
+			.slideshow-container {
+				margin-top: 0;
+				margin-left: 0;
+			}
+			.slideshow-container div {
+				width: 100%;
+				height: 30em;
+			}
+			#dotdiv{
+				height:1em;
+			}
+			
+		}
+		@media only screen and (max-width: 814px) {
+			body {
+				background-color: lightcoral;
+			}
+			#headerImg{
+				padding-top:0;
+				float:left;
+			}
+			
+		}
 	</style>
 </head>
 
 <body>
 	<div class="header">
-		<div id="headerText" style="float: left">
-			<p style="font-size:1.5em; font-weight:bold">Professor WanLing Yang's Lab</p>
+		<div id="headerText" style="float:left;margin-top:1em;margin-bottom:1em">
+			<p style="font-size:1.5em;font-weight:bold">Professor WanLing Yang's Lab</p>
 			<p style="font-size:1em">PAED of HKU LKS Medicine Faculty</p>
 		</div>
-		<div id="headerImg" align="right">
-			<img src="src/HKU logo.png" alt="HKU logo" style="width: 7%">
-			<img src="src/HKU_Paed.png" alt="HKU paed" style="width: 10%">
+		<div id="headerImg">
+			<img src="src/HKU logo.png" alt="HKU logo" style="width: 4em">
+			<img src="src/HKU_Paed.png" alt="HKU paed" style="width: 5.5em">
 		</div>
-		<ul>
+		<ul style="width:100%">
 			<li><button onclick="toHome()">Home</button></li>
 			<li><button onclick="toMembers()">Members</button></li>
 			<li><button onclick="toPublications()">Publications</button></li>
 			<li><button onclick="toSoftwares()">Softwares</button></li>
 			<li><button onclick="toContact()">Contact</button></li>
 			<li><button onclick="toRecruitment()">Recruitment</button></li>
-			<li><button onclick="toUsefulLinks()">Useful Links</button></li>
+			<li><button onclick="toUsefulLinks()">UsefulLinks</button></li>
 		</ul>
 	</div>
 	<hr class="hr1">
 	
 	<div id="Home" style="display:block">
-		<div class="mainText" style="display:flex">
-			<div>
+		<div class="mainText">
+			<div id="Text">
 				<p style="font-size:1.5em; font-weight:bold">About US:</p>
 				<p><a style="font-weight:bold">Keywords:</a> SLE, GWAS, NGS, multi-omics.</p>
 				<div align="justify" style="width:100%;line-height:2em">
-				<p>We are interested in human genetics for both complex diseases and Mendelian disorders.</p>
-				<p>For complex diseases such as systemic lupus erythematosus (SLE), we mainly focus on genome-wide association studies (GWAS) through a network of collaborators in Hong Kong, mainland China, Asia and the world. We are also collaborating with immunologists and rheumatologists to try to understand the disease through experimental approaches.</p>
-				<p>For Mendelian diseases such as primary immunodeficiency diseases (PID), we use whole exome sequencing (WES) to reach molecular diagnoses for the patients. So if you are interested in pursuing a career in genetic studies, or you are interested in autoimmune diseases, this is the place for you.</p>
-				<p>We are also interested in analysis of big data in biology. Take SLE for example, understanding the limitations of genetic studies, we try to understand susceptibility in the context of gene expression, epigenetic changes, genome biology, and immunological pathways. So if you are interested in joining us to hone your skills in data analysis and using a comprehensive approach to understand biology, disease and health, you are welcome.</p>
-				<p>We also have a keen interest in improving next generation sequencing (NGS) for molecular diagnosis of Mendelian diseases and for population genetic screening (eventually). This includes an experimental component to improve the coverage of the targeted regions and an algorithm component to improve data analysis. So if you are interested in making better applications of NGS data, please feel free to contact us at <b>yangwl@hku.hk</b></p>
+					<p>We are interested in human genetics for both complex diseases and Mendelian disorders.</p>
+					<p>For complex diseases such as systemic lupus erythematosus (SLE), we mainly focus on genome-wide association studies (GWAS) through a network of collaborators in Hong Kong, mainland China, Asia and the world. We are also collaborating with immunologists and rheumatologists to try to understand the disease through experimental approaches.</p>
+					<p>For Mendelian diseases such as primary immunodeficiency diseases (PID), we use whole exome sequencing (WES) to reach molecular diagnoses for the patients. So if you are interested in pursuing a career in genetic studies, or you are interested in autoimmune diseases, this is the place for you.</p>
+					<p>We are also interested in analysis of big data in biology. Take SLE for example, understanding the limitations of genetic studies, we try to understand susceptibility in the context of gene expression, epigenetic changes, genome biology, and immunological pathways. So if you are interested in joining us to hone your skills in data analysis and using a comprehensive approach to understand biology, disease and health, you are welcome.</p>
+					<p>We also have a keen interest in improving next generation sequencing (NGS) for molecular diagnosis of Mendelian diseases and for population genetic screening (eventually). This includes an experimental component to improve the coverage of the targeted regions and an algorithm component to improve data analysis. So if you are interested in making better applications of NGS data, please feel free to contact us at <b>yangwl@hku.hk</b></p>
 				</div>
 			</div>
 			<div class="slideshow-container">
@@ -126,7 +164,7 @@
 				<div class="mySlides fade"><img src="src/Lab_picture4.jpg" style="width:100%;height:100%;object-fit:cover"></div>
 				<div class="mySlides fade"><img src="src/Lab_picture5.jpg" style="width:100%;height:100%;object-fit:cover"></div>
 				<br>
-				<div style="text-align:center">
+				<div id="dotdiv" style="text-align:center">
 					<span class="dot" onclick="currentSlide(1)"></span> 
 					<span class="dot" onclick="currentSlide(2)"></span> 
 					<span class="dot" onclick="currentSlide(3)"></span>
@@ -139,8 +177,11 @@
 	
 	<div id="Members" style="display:none">
 		<div class="piBlock">
-			<div id="wanlingyang" style="display: flex">
-				<div style="width: 150%">
+			<div id="wanlingyang" style="display:flex">
+				<div style="padding-top:2em">
+					<img src="src/yangwanling.jpg" style=" width: 20em; float:right; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa">
+				</div>
+				<div style="padding-left:10%">
 					<p style="font-size:1.5em; font-weight:bold">Professor Wanling Yang</p>
 					<p style="font-size:1.5em; font-weight:bold">(楊萬嶺)</p>
 					<p>M. Medicine (China), Ph.D. Pharmacology and Bioinformatics (Minnesota)</p>
@@ -150,16 +191,13 @@
 						<li>Awards: Faculty outstanding research output award， 2017， school of clinical medicine, HKU.</li>
 					</ul>
 				</div>
-				<div>
-					<img src="src/yangwanling.jpg" style=" width: 130%; float:right; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa">
-				</div>
 			</div>
 			<br><br><br>
-			<div id="yongfeiwang" style="display: flex; ">
-				<div >
-					<img src="src/yongfeiwang.png" style=" width: 150%; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa">
+			<div id="yongfeiwang" style="display:flex; ">
+				<div>
+					<img src="src/yongfeiwang.png" style=" width: 20em; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa">
 				</div>
-				<div style="padding-left: 20%">
+				<div style="padding-left: 10%">
 					<p style="font-size:1.5em; font-weight:bold">Dr. Yongfei Wang</p>
 					<p style="font-size:1.5em; font-weight:bold">(王勇斐)</p>
 					<p>Assistant Professor in CUHK-ShenZhen</p>
@@ -175,9 +213,9 @@
 			<hr class="hr1">
 		</div>
 		<div>
-			<p align="center" style="font-size:2em; font-weight:bold">Team members</p>
-			<div style="display: flex; flex-wrap: wrap;">
-				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+			<p align="center" style="font-size:2em;font-weight:bold">Team members</p>
+			<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center">
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 1em">
 					<div style="display: flex">
 						<img src="src/yangjing.png" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
 						<p>Dr. Jing Yang<br><br>Senior Research Officer</p>
@@ -188,7 +226,7 @@
 						<li>Tel: (852) 28315132</li>
 					</ul>
 				</div>
-				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 1em">
 					<div style="display: flex">
 						<img src="src/FengHong.jpg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
 						<p>Dr. Feng Hong<br><br>Post-doctoral Fellow</p>
@@ -199,7 +237,7 @@
 						<li>Other specialties: Tennis, hiking, yoga.</li>
 					</ul>
 				</div>
-				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 1em">
 					<div style="display: flex">
 						<img src="src/XTYang.jpeg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
 						<p>Dr. Yang XingTian<br><br>Post-doctoral Fellow</p>
@@ -210,7 +248,7 @@
 						<li>Other specialties: Physical training and all kinds of sports</li>
 					</ul>
 				</div>
-				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 1em">
 					<div style="display: flex">
 						<img src="src/liangrui.jpeg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
 						<p>Liang Rui<br><br>Ph.D. Candidate</p>
@@ -221,7 +259,7 @@
 						<li>Other specialties: Badminton, cooking, coffee brewing, wine tasting.</li>
 					</ul>
 				</div>
-				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 1em">
 					<div style="display: flex">
 						<img src="src/Dangxiao.jpeg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
 						<p>Dang Xiao<br><br>Ph.D. Candidate</p>
@@ -231,7 +269,7 @@
 						<li>Email: u3007547@connect.hku.hk</li>
 					</ul>
 				</div>
-				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 1em">
 					<div style="display: flex">
 						<img src="src/YaoLei.jpg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
 						<p>Lei Yao<br><br>Ph.D. Candidate</p>
@@ -242,7 +280,7 @@
 						<li>Other specialties: Basketball, swimming, driving, etc.</li>
 					</ul>
 				</div>
-				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 1em">
 					<div style="display: flex">
 						<img src="src/Louis.jpeg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
 						<p>Louis SHE<br><br>M.Phil. Candidate</p>
@@ -253,7 +291,7 @@
 						<li>Other specialties: Gymnastics, badminton, computer games</li>
 					</ul>
 				</div>
-				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 1em">
 					<div style="display: flex">
 						<img src="src/Frank.jpg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
 						<p>Frank<br><br>Ph.D. Candidate</p>
@@ -264,7 +302,7 @@
 						<li>Other specialties: </li>
 					</ul>
 				</div>
-				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 1em">
 					<div style="display: flex">
 						<img src="src/HuidongSu.jpg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
 						<p>Su Huidong<br><br>Ph.D. Candidate</p>
@@ -280,7 +318,7 @@
 		<div>
 			<hr class="hr1">
 		</div>
-		<div style="padding-left: 15em">
+		<div>
 			<p style="font-size:1.5em; font-weight:bold">Alumni</p>
 			<ul style="line-height:2">
 				<li>Dr. Ruoyan Chen, Ph.D. Graduate</li>
@@ -335,7 +373,7 @@
 	</div>
 	
 	<div id="Publications" style="display:none">
-		<div style="padding-left:10em;padding-right:10em" align="justify">
+		<div align="justify">
 			<p style="font-size:1.5em; font-weight:bold">First Part of Publication</p>
 			<p>Genetic Studies on Systemic Lupus Erythematosus (SLE)</p>
 			<ol style="line-height:2" type=1>
@@ -404,7 +442,7 @@
 	</div>
 	
 	<div id="Softwares" style="display:none">
-		<div style="padding-left:10em;padding-right:10em" align="justify">
+		<div align="justify">
 			<p style="font-size:1.5em; font-weight:bold">Softwares</p>
 			<p>Our lab has the following representative released software!</p>
 			<table style="width:100%;display:flex">
@@ -462,7 +500,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td style="width:15%;vertical-align:top;padding-top:1em"><a>KGG/GATES modification (region-based test)</a></td>
+					<td style="width:15%;vertical-align:top;padding-top:1em"><a>KGG/GATES modification <br> (region-based test)</a></td>
 					<td>
 						<p style="font-weight:bold">Description:HLA-IMPUTER</p>
 						<p><a style="font-weight:bold">Option1</a>: download this KGG package in a whole.</p>
@@ -475,7 +513,7 @@
 	</div>
 	
 	<div id="Contact" style="display:none">
-		<div style="padding-left:10em;padding-right:10em" align="justify">
+		<div align="justify">
 			<ul style="line-height:2em">
 				<li style="margin-bottom:1em"><b>Email:</b> yangwl@hku.hk</li>
 				<li style="margin-bottom:1em"><b>Tel:</b> (852) 28315077</li>
@@ -489,7 +527,7 @@
 	</div>
 	
 	<div id="Recruitment" style="display:none">
-		<div style="padding-left:10em;padding-right:10em" align="justify">
+		<div align="justify">
 			<div style="line-height:3em">
 				<p style="font-size:1.5em;font-weight:bold">Wellcome</p>
 				<p>Interested candidates are welcome to apply to our PhD or Mphil programs in human genetics, genome biology, and bioinformatics. The application deadline for the main round is December 1st, with two clearance rounds ending in April and August. The following two tracks are available in our laboratory:</p>
@@ -514,7 +552,7 @@
 	</div>
 	
 	<div id="UsefulLinks" style="display:none">
-		<div style="padding-left:8em;padding-right:8em">
+		<div>
 			<div style="display:flex">
 				<div >
 					<img src="src/HKU_GraduateSchool.jpg" style="width:18em;height:18em;object-fit:cover">
