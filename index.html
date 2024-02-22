@@ -23,6 +23,9 @@
 			float: right;
 			padding-top:3em;
 		}
+		#headerImg img{
+			height:4.3em;
+		}
 		
 		.header ul {
 			display: flex;
@@ -49,15 +52,20 @@
 			border: 1.5px solid #95A92C;
 		}
 		
+		#AboutUS{
+			float:left;
+		}
+		
 		/* Slideshow container */
 		.slideshow-container {
 			margin-top: 2em;
-			margin-left: 0;
+			display:block;
+			padding-left:50%;
 			
 		}
 		.slideshow-container div {
-			width:100%;
-			height: 40em;
+			width:30em;
+			height: 15em;
 		}
 		#dotdiv{
 			height:1em;
@@ -94,24 +102,23 @@
 			display:flex;
 		}
 		
-		@media only screen and (max-width: 1200px) {
+		@media only screen and (max-width: 1499px) {
 			.header ul {
 				display: grid;
 				grid-template-columns: repeat(4, 1fr);
 			}
-			.mainText{
+			#AboutUS{
 				display:block;
+				float:none;
 			}
-			.slideshow-container {
-				margin-top: 0;
-				margin-left: 0;
+			.slideshow-container{
+				padding-left:15%;
+				padding-right:15%;
+
 			}
 			.slideshow-container div {
-				width: 100%;
-				height: 30em;
-			}
-			#dotdiv{
-				height:1em;
+				width:100%;
+				height:20em;
 			}
 			
 		}
@@ -127,14 +134,7 @@
 			}
 			
 		}
-		@media only screen and (max-width: 814px) {
-			#headerImg{
-				padding-top:0;
-				float:left;
-			}
-			
-		}
-		@media only screen and (max-width: 712px) {
+		@media only screen and (max-width: 813px) {
 			body {
 				font-size: 15px;
 			}
@@ -145,19 +145,28 @@
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
 			}
+			#headerImg{
+				padding-top:0;
+				padding-bottom:1em;
+				float:left;
+			}
+			#headerImg img{
+				height:7em;
+			}
 		}
 	</style>
 </head>
 
 <body>
 	<div class="header">
+		
 		<div id="headerText" style="float:left;margin-top:1em;margin-bottom:1em">
 			<p style="font-size:1.5em;font-weight:bold">Professor WanLing Yang's Lab</p>
 			<p style="font-size:1em">PAED of HKU LKS Medicine Faculty</p>
 		</div>
 		<div id="headerImg">
-			<img src="src/HKU logo.png" alt="HKU logo" style="width: 4em">
-			<img src="src/HKU_Paed.png" alt="HKU paed" style="width: 5.5em">
+			<img src="src/HKU logo.png" alt="HKU logo">
+			<img src="src/HKU_Paed.png" alt="HKU paed">
 		</div>
 		<ul style="width:100%">
 			<li><button onclick="toHome()">Home</button></li>
@@ -174,29 +183,28 @@
 	<div id="Home" style="display:block">
 		<div class="mainText">
 			<div id="Text">
-				<p style="font-size:1.5em; font-weight:bold">About US:</p>
-				<p><a style="font-weight:bold">Keywords:</a> SLE, GWAS, NGS, multi-omics.</p>
+				<div id="AboutUS" style="padding-right:1em">
+					<p style="font-size:1.5em; font-weight:bold">About US:</p>
+					<p><a style="font-weight:bold">Keywords:</a> SLE, GWAS, NGS, multi-omics.</p>
+					<p>We are interested in human genetics for both complex diseases <br> and Mendelian disorders.</p>
+				</div>
+				<div class="slideshow-container">
+					<div class="mySlides fade"><img src="src/Lab_picture1.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+					<div class="mySlides fade"><img src="src/Lab_picture2.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+					<div class="mySlides fade"><img src="src/Lab_picture3.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+					<br>
+					<div id="dotdiv" style="text-align:center">
+						<span class="dot" onclick="currentSlide(1)"></span> 
+						<span class="dot" onclick="currentSlide(2)"></span> 
+						<span class="dot" onclick="currentSlide(3)"></span>
+					</div>
+				<br>
+				</div>
 				<div align="justify" style="width:100%;line-height:2em">
-					<p>We are interested in human genetics for both complex diseases and Mendelian disorders.</p>
 					<p>For complex diseases such as systemic lupus erythematosus (SLE), we mainly focus on genome-wide association studies (GWAS) through a network of collaborators in Hong Kong, mainland China, Asia and the world. We are also collaborating with immunologists and rheumatologists to try to understand the disease through experimental approaches.</p>
 					<p>For Mendelian diseases such as primary immunodeficiency diseases (PID), we use whole exome sequencing (WES) to reach molecular diagnoses for the patients. So if you are interested in pursuing a career in genetic studies, or you are interested in autoimmune diseases, this is the place for you.</p>
 					<p>We are also interested in analysis of big data in biology. Take SLE for example, understanding the limitations of genetic studies, we try to understand susceptibility in the context of gene expression, epigenetic changes, genome biology, and immunological pathways. So if you are interested in joining us to hone your skills in data analysis and using a comprehensive approach to understand biology, disease and health, you are welcome.</p>
 					<p>We also have a keen interest in improving next generation sequencing (NGS) for molecular diagnosis of Mendelian diseases and for population genetic screening (eventually). This includes an experimental component to improve the coverage of the targeted regions and an algorithm component to improve data analysis. So if you are interested in making better applications of NGS data, please feel free to contact us at <b>yangwl@hku.hk</b></p>
-				</div>
-			</div>
-			<div class="slideshow-container">
-				<div class="mySlides fade"><img src="src/Lab_picture1.jpg" style="width:100%;height:100%;object-fit:cover"></div>
-				<div class="mySlides fade"><img src="src/Lab_picture2.jpg" style="width:100%;height:100%;object-fit:cover"></div>
-				<div class="mySlides fade"><img src="src/Lab_picture3.jpg" style="width:100%;height:100%;object-fit:cover"></div>
-				<div class="mySlides fade"><img src="src/Lab_picture4.jpg" style="width:100%;height:100%;object-fit:cover"></div>
-				<div class="mySlides fade"><img src="src/Lab_picture5.jpg" style="width:100%;height:100%;object-fit:cover"></div>
-				<br>
-				<div id="dotdiv" style="text-align:center">
-					<span class="dot" onclick="currentSlide(1)"></span> 
-					<span class="dot" onclick="currentSlide(2)"></span> 
-					<span class="dot" onclick="currentSlide(3)"></span>
-					<span class="dot" onclick="currentSlide(4)"></span>
-					<span class="dot" onclick="currentSlide(5)"></span>
 				</div>
 			</div>
 		</div>
