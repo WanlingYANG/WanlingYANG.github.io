@@ -1,0 +1,757 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Professor Wanling Yang's Lab</title>
+	<style>
+		body {
+			padding-left: 10%;
+			padding-right: 10%;
+			color: black;
+  			font-size: 20px;
+			font-family: trebuchet, sans-serif;
+			background-color:#F6F9F5;
+		}
+		.header {
+  			color: black;
+  			font-size: 20px;
+		}
+		#headerText p {
+			margin: 0;
+			margin-top: 1em;
+			margin-bottom: 1em;
+		}
+		.header img{
+			padding-left: 2em;
+		}
+		.header ul {
+			display: flex;
+			justify-content: right;
+			padding-top: 0.5em;
+		}
+		.header li {
+  			display: inline;
+		}
+		.header li button {
+			background-color: transparent;
+			outline: none;
+			border: none;
+			font-family: inherit;
+			font-size: 1.25em;
+  			color: black;
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+		}
+		.header li button:hover {
+			color: #95A92C;
+		}
+		.hr1 {
+			border: 1.5px solid #95A92C;
+		}
+		
+		/* Slideshow container */
+		.slideshow-container {
+			margin-top: 15em;
+			margin-left: 5em;
+			
+		}
+		.slideshow-container div {
+			width: 27em;
+			height: 17em;
+		}
+		/* The dots/bullets/indicators */
+		.dot {
+			cursor: pointer;
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			border-radius: 50%;
+			display: inline-block;
+			background-color: #bbb;
+		}
+		.active, .dot:hover {
+ 			 background-color: #717171;
+		}
+		/* Fading animation */
+		.fade {
+		  animation-name: fade;
+		  animation-duration: 1.5s;
+		}
+		@keyframes fade {
+		  from {opacity: .4} 
+		  to {opacity: 1}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<div id="headerText" style="float: left">
+			<p style="font-size:1.5em; font-weight:bold">Professor WanLing Yang's Lab</p>
+			<p style="font-size:1em">PAED of HKU LKS Medicine Faculty</p>
+		</div>
+		<div id="headerImg" align="right">
+			<img src="src/HKU logo.png" alt="HKU logo" style="width: 7%">
+			<img src="src/HKU_Paed.png" alt="HKU paed" style="width: 10%">
+		</div>
+		<ul>
+			<li><button onclick="toHome()">Home</button></li>
+			<li><button onclick="toMembers()">Members</button></li>
+			<li><button onclick="toPublications()">Publications</button></li>
+			<li><button onclick="toSoftwares()">Softwares</button></li>
+			<li><button onclick="toContact()">Contact</button></li>
+			<li><button onclick="toRecruitment()">Recruitment</button></li>
+			<li><button onclick="toUsefulLinks()">Useful Links</button></li>
+		</ul>
+	</div>
+	<hr class="hr1">
+	
+	<div id="Home" style="display:block">
+		<div class="mainText" style="display:flex">
+			<div>
+				<p style="font-size:1.5em; font-weight:bold">About US:</p>
+				<p><a style="font-weight:bold">Keywords:</a> SLE, GWAS, NGS, multi-omics.</p>
+				<div align="justify" style="width:100%;line-height:1.5em">
+				<p>We are interested in human genetics for both complex diseases and Mendelian disorders.</p>
+				<p>For complex diseases such as systemic lupus erythematosus (SLE), we mainly focus on genome-wide association studies (GWAS) through a network of collaborators in Hong Kong, mainland China, Asia and the world. We are also collaborating with immunologists and rheumatologists to try to understand the disease through experimental approaches.</p>
+				<p>For Mendelian diseases such as primary immunodeficiency diseases (PID), we use whole exome sequencing (WES) to reach molecular diagnoses for the patients. So if you are interested in pursuing a career in genetic studies, or you are interested in autoimmune diseases, this is the place for you.</p>
+				<p>We are also interested in analysis of big data in biology. Take SLE for example, understanding the limitations of genetic studies, we try to understand susceptibility in the context of gene expression, epigenetic changes, genome biology, and immunological pathways. So if you are interested in joining us to hone your skills in data analysis and using a comprehensive approach to understand biology, disease and health, you are welcome.</p>
+				<p>We also have a keen interest in improving next generation sequencing (NGS) for molecular diagnosis of Mendelian diseases and for population genetic screening (eventually). This includes an experimental component to improve the coverage of the targeted regions and an algorithm component to improve data analysis. So if you are interested in making better applications of NGS data, please feel free to contact us at <b>yangwl@hku.hk</b></p>
+				</div>
+			</div>
+			<div class="slideshow-container">
+				<div class="mySlides fade"><img src="src/Lab_picture1.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+				<div class="mySlides fade"><img src="src/Lab_picture2.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+				<div class="mySlides fade"><img src="src/Lab_picture3.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+				<div class="mySlides fade"><img src="src/Lab_picture4.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+				<br>
+				<div style="text-align:center">
+					<span class="dot" onclick="currentSlide(1)"></span> 
+					<span class="dot" onclick="currentSlide(2)"></span> 
+					<span class="dot" onclick="currentSlide(3)"></span>
+					<span class="dot" onclick="currentSlide(4)"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="Members" style="display:none">
+		<div class="piBlock">
+			<div id="wanlingyang" style="display: flex">
+				<div style="width: 150%">
+					<p style="font-size:1.5em; font-weight:bold">Professor Wanling Yang</p>
+					<p style="font-size:1.5em; font-weight:bold">(楊萬嶺)</p>
+					<p>M. Medicine (China), Ph.D. Pharmacology and Bioinformatics (Minnesota)</p>
+					<ul style="line-height: 3">
+						<li>Professor: Department of paediatrics and adolescent medicine, school of clinical medicine, HKU.</li>
+						<li>Specialty: Genetics, genomics, and bioinformatics.</li>
+						<li>Awards: Faculty outstanding research output award， 2017， school of clinical medicine, HKU.</li>
+					</ul>
+				</div>
+				<div>
+					<img src="src/yangwanling.jpg" style=" width: 130%; float:right; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa">
+				</div>
+			</div>
+			<br><br><br>
+			<div id="yongfeiwang" style="display: flex; ">
+				<div >
+					<img src="src/yongfeiwang.png" style=" width: 150%; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa">
+				</div>
+				<div style="padding-left: 20%">
+					<p style="font-size:1.5em; font-weight:bold">Dr. Yongfei Wang</p>
+					<p style="font-size:1.5em; font-weight:bold">(王勇斐)</p>
+					<p>Assistant Professor in CUHK-ShenZhen</p>
+					<ul style="line-height: 3">
+						<li>Ph.D. (The University of Hong Kong)</li>
+						<li>B.Sc./M.Sc (Fujian Agriculture and Forestry University)</li>
+						<li>Research field: Bioinformatics and population genetics; autoimmune diseases; systemic lupus erythematosus; multi-omics data analysis; drug discovery and repositioning; genetic screening.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div>
+			<hr class="hr1">
+		</div>
+		<div>
+			<p align="center" style="font-size:2em; font-weight:bold">Team members</p>
+			<div style="display: flex; flex-wrap: wrap;">
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+					<div style="display: flex">
+						<img src="src/yangjing.png" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
+						<p>Dr. Jing Yang<br><br>Senior Research Officer</p>
+					</div>
+					<ul style="line-height:2; font-size: 0.8em; padding-top:1em;padding-right:0.2em">
+						<li>MD, Ph.D., Medical School of Chinese PLA, Chinese PLA General Hospital</li>
+						<li>Email: jingy09@hku.hk</li>
+						<li>Tel: (852) 28315132</li>
+					</ul>
+				</div>
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+					<div style="display: flex">
+						<img src="src/FengHong.jpg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
+						<p>Dr. Feng Hong<br><br>Post-doctoral Fellow</p>
+					</div>
+					<ul style="line-height:2; font-size: 0.8em; padding-top:1em;padding-right:0.2em">
+						<li>Research interests: STARR-sequencing, CRISPR screening</li>
+						<li>Email: fenghong@hku.hk</li>
+						<li>Other specialties: Tennis, hiking, yoga.</li>
+					</ul>
+				</div>
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+					<div style="display: flex">
+						<img src="src/XTYang.jpeg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
+						<p>Dr. Yang XingTian<br><br>Post-doctoral Fellow</p>
+					</div>
+					<ul style="line-height:2; font-size: 0.8em; padding-top:1em;padding-right:0.2em">
+						<li>Research Interests: NGS data analysis, variants functional effect interpretation and prediction</li>
+						<li>Email: u3005579@connect.hku.hk</li>
+						<li>Other specialties: Physical training and all kinds of sports</li>
+					</ul>
+				</div>
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+					<div style="display: flex">
+						<img src="src/liangrui.jpeg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
+						<p>Liang Rui<br><br>Ph.D. Candidate</p>
+					</div>
+					<ul style="line-height:2; font-size: 0.8em; padding-top:1em;padding-right:0.2em">
+						<li>Research Interests: GWAS post-process, functional characterization.</li>
+						<li>Email: u3002378@connect.hku.hk</li>
+						<li>Other specialties: Badminton, cooking, coffee brewing, wine tasting.</li>
+					</ul>
+				</div>
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+					<div style="display: flex">
+						<img src="src/Dangxiao.jpeg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
+						<p>Dang Xiao<br><br>Ph.D. Candidate</p>
+					</div>
+					<ul style="line-height:2; font-size: 0.8em; padding-top:1em;padding-right:0.2em">
+						<li>Research Interests: Genetics, Immunology, GWAS, Genomics, Bioinformatics</li>
+						<li>Email: u3007547@connect.hku.hk</li>
+					</ul>
+				</div>
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+					<div style="display: flex">
+						<img src="src/YaoLei.jpg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
+						<p>Lei Yao<br><br>Ph.D. Candidate</p>
+					</div>
+					<ul style="line-height:2; font-size: 0.8em; padding-top:0em;padding-right:0.2em">
+						<li>Research Interests: Genetics, Immunology, GWAS, NGS, Statistics, Machine Learning</li>
+						<li>Email: leiyao1997@connect.hku.hk & leiyao1997@mail.nankai.edu.cn</li>
+						<li>Other specialties: Basketball, swimming, driving, etc.</li>
+					</ul>
+				</div>
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+					<div style="display: flex">
+						<img src="src/Louis.jpeg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
+						<p>Louis SHE<br><br>M.Phil. Candidate</p>
+					</div>
+					<ul style="line-height:2; font-size: 0.8em; padding-top:0em;padding-right:0.2em">
+						<li>Research interest: Statistical genetics, genetic algorithms, genetic modifiers, interaction effect</li>
+						<li>Email: snakesch@connect.hku.hk</li>
+						<li>Other specialties: Gymnastics, badminton, computer games</li>
+					</ul>
+				</div>
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+					<div style="display: flex">
+						<img src="src/Frank.jpg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
+						<p>Frank<br><br>Ph.D. Candidate</p>
+					</div>
+					<ul style="line-height:2; font-size: 0.8em; padding-top:0em;padding-right:0.2em">
+						<li>Research interest: </li>
+						<li>Email: </li>
+						<li>Other specialties: </li>
+					</ul>
+				</div>
+				<div style="height:25em; width:18em; background: white; border: 1px solid #BFBFBF; box-shadow: 10px 10px 5px #aaaaaa; margin: 3em">
+					<div style="display: flex">
+						<img src="src/HuidongSu.jpg" style="width: 8em; height: 12em; object-fit: cover; margin:0.5em; padding-right:2em">
+						<p>Su Huidong<br><br>Ph.D. Candidate</p>
+					</div>
+					<ul style="line-height:2; font-size: 0.8em; padding-top:0em;padding-right:0.2em">
+						<li>Research interest: </li>
+						<li>Email: </li>
+						<li>Other specialties: </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div>
+			<hr class="hr1">
+		</div>
+		<div style="padding-left: 15em">
+			<p style="font-size:1.5em; font-weight:bold">Alumni</p>
+			<ul style="line-height:2">
+				<li>Dr. Ruoyan Chen, Ph.D. Graduate</li>
+				<li>Dr. Zhang Yan, Ph.D. Graduate -> Guangzhou Children's Hospital</li>
+				<li>Dr. Dingge Ying, Ph.D. Graduate</li>
+				<li>Dr. Yazhi Bill HUANG, Ph.D. Graduate</li>
+				<li>Dr. Jing Zhang, Ph.D. Graduate</li>
+				<li>M.Phil. Lu Zhang, M.Phil. Graduate</li>
+				<li>Dr. Yongfei Wang, Ph.D. Graduate -> The Chinese University of Hong Kong (Shenzhen)</li>
+				<li>Dr. Jane Jiangshan Shen, Ph.D. Graduate</li>
+				<li>Dr. Andy Guo Mengbiao, Ph.D. Graduate</li>
+				<li>Dr. Huoru Zhang, Ph.D. Graduate</li>
+				<li>M.Phil. LiChuan Zheng, M.Phil. Graduate</li>
+				<li>Dr. Yujie Cao, Ph.D. Graduate -> Westlake University</li>
+				<li>Dr. Zhongyi Liu, Ph.D. Graduate -> The Chinese University of Hong Kong</li>
+				<li>Dr. Wen Ma, Ph.D. Graduate</li>
+			</ul>
+			<p style="font-size:1.5em; font-weight:bold">Other research staff</p>
+			<ul style="line-height:2">
+				<li>Mrs. Chen Xin Xin (Research Assistant)</li>
+				<li>Mrs. Zhang Cai Cai (Research Assistant)</li>
+			</ul>
+			<p style="font-size:1.5em; font-weight:bold">Collaborators</p>
+			<ul style="line-height:2">
+				<li>Anhui Medical University</li>
+					<ul>
+						<li>Zhang Xuejun, Institute of Dermathology</li>
+						<li>Sheng Yujun, Institute of Dermathology</li>
+					</ul>
+				<li>Chulalongkorn University</li>
+					<ul>
+						<li>Nattiya Hirankarn, Immunology Unit, Department of Microbiology</li>
+					</ul>
+				<li>Shanghai Institute of Rheumatology, Renji Hospital</li>
+					<ul>
+						<li>Shen Nan Director of Shanghai Institute of Rheumatology</li>
+						<li>Tang Yuanjia Shanghai Institute of Rheumatology</li>
+						<li>Lv Liangjing Shanghai Institute of Rheumatology</li>
+					</ul>
+				<li>Peking University First Hospital</li>
+					<ul>
+						<li>Zhang Hong Professor of Medicine, Renal Division of Peking University First Hospital</li>
+						<li>Zhou Xujie Laboratory of Nephrology</li>
+					</ul>
+				<li>King’s College London</li>
+					<ul>
+						<li>Timothy J Vyse Professor of Molecular Medicine Consultant in Rheumatology</li>
+						<li>David L Morris Division of Genetics and Molecular Medicine</li>
+					</ul>
+			</ul>
+		</div>
+	</div>
+	
+	<div id="Publications" style="display:none">
+		<div style="padding-left:10em;padding-right:10em" align="justify">
+			<p style="font-size:1.5em; font-weight:bold">First Part of Publication</p>
+			<p>Genetic Studies on Systemic Lupus Erythematosus (SLE)</p>
+			<ol style="line-height:2" type=1>
+				<li style="margin-bottom:3em"><b>Yang W</b>, Zhao M, Hirankarn N, Lau CS, Mok CC, Chan TM, Wong RW, Lee KW, Mok MY, Wong SN, Avihingsanon Y, Lin IO, Lee TL, Ho MH, Lee PP, Wong WH, Sham PC, Lau YL. ITGAM is associated with disease susceptibility and renal nephritis of systemic lupus erythematosus in Hong Kong Chinese and Thai. <b>Hum Mol Genet</b>. 2009 Jun 1;18(11):2063-70. doi: 10.1093/hmg/ddp118. Epub 2009 Mar 13. PubMed PMID: 19286673; PubMed Central PMCID: PMC2678927.</li>
+
+				<li style="margin-bottom:3em"><b>Yang W</b>, Shen N, Ye DQ, Liu Q, Zhang Y, Qian XX, Hirankarn N, Ying D, Pan HF,  Mok CC, Chan TM, Wong RW, Lee KW, Mok MY, Wong SN, Leung AM, Li XP, Avihingsanon Y, Wong CM, Lee TL, Ho MH, Lee PP, Chang YK, Li PH, Li RJ, Zhang L, Wong WH, Ng IO, Lau CS, Sham PC, Lau YL; Asian Lupus Genetics Consortium. Genome-wide association study in Asian populations identifies variants in ETS1 and WDFY4 associated with systemic lupus erythematosus. <b>PLoS Genet</b>. 2010 Feb 12;6(2):e1000841. doi: 10.1371/journal.pgen.1000841. PubMed PMID: 20169177; PubMed Central PMCID: PMC2820522.</li>
+
+				<li style="margin-bottom:3em"><b>Yang W</b>, Tang H, Zhang Y, Tang X, Zhang J, Sun L, Yang J, Cui Y, Zhang L, Hirankarn N, Cheng H, Pan HF, Gao J, Lee TL, Sheng Y, Lau CS, Li Y, Chan TM, Yin  X, Ying D, Lu Q, Leung AM, Zuo X, Chen X, Tong KL, Zhou F, Diao Q, Tse NK, Xie H, Mok CC, Hao F, Wong SN, Shi B, Lee KW, Hui Y, Ho MH, Liang B, Lee PP, Cui H, Guo  Q, Chung BH, Pu X, Liu Q, Zhang X, Zhang C, Chong CY, Fang H, Wong RW, Sun Y, Mok MY, Li XP, Avihingsanon Y, Zhai Z, Rianthavorn P, Deekajorndej T, Suphapeetiporn  K, Gao F, Shotelersuk V, Kang X, Ying SK, Zhang L, Wong WH, Zhu D, Fung SK, Zeng F, Lai WM, Wong CM, Ng IO, Garcia-Barceló MM, Cherny SS, Shen N, Tam PK, Sham PC, Ye DQ, Yang S, Zhang X, Lau YL. Meta-analysis followed by replication identifies loci in or near CDKN1B, TET3, CD80, DRAM1, and ARID5B as associated with systemic lupus erythematosus in Asians. <b>Am J Hum Genet</b>. 2013 Jan 10;92(1):41-51. doi: 10.1016/j.ajhg.2012.11.018. Epub 2012 Dec 27. PubMed PMID: 23273568; PubMed Central PMCID: PMC3542470.</li>
+
+				<li style="margin-bottom:3em">Zhang J, Zhang Y, Zhang L, Yang J, Ying D, Zeng S, Lee TL, Lau CS, Chan TM, Leung AM, Mok CC, Wong SN, Lee KW, Ho MH, Lee PP, Chung BH, Chong CY, Wong RW, Mok MY, Wong WH, Lau YL, <b>*Yang W</b>. Epistatic interaction between genetic variants in susceptibility gene ETS1 correlates with IL-17 levels in SLE patients. <b>Ann Hum Genet</b>. 2013 Jul;77(4):344-50. doi: 10.1111/ahg.12018. Epub 2013 Apr 24. PubMed PMID: 23614478.</li>
+
+				<li style="margin-bottom:3em">Zhang J, Zhang Y, Yang J, Zhang L, Sun L, Pan HF, Hirankarn N, Ying D, Zeng S, Lee TL, Lau CS, Chan TM, Leung AM, Mok CC, Wong SN, Lee KW, Ho MH, Lee PP, Chung BH, Chong CY, Wong RW, Mok MY, Wong WH, Tong KL, Tse NK, Li XP, Avihingsanon Y, Rianthavorn P, Deekajorndej T, Suphapeetiporn K, Shotelersuk V, Ying SK, Fung SK, Lai WM, Garcia-Barceló MM, Cherny SS, Tam PK, Cui Y, Sham PC, Yang S, Ye DQ, Zhang XJ, Lau YL, <b>*Yang W</b>. Three SNPs in chromosome 11q23.3 are independently associated with systemic lupus erythematosus in Asians. <b>Hum Mol Genet</b>. 2014 Jan 15;23(2):524-33. doi: 10.1093/hmg/ddt424. Epub 2013 Sep 2. PubMed PMID: 24001599.</li>
+
+				<li style="margin-bottom:3em">Zhang Y, Zhang J, Yang J, Wang Y, Zhang L, Zuo X, Sun L, Pan HF, Hirankarn N, Wang T, Chen R, Ying D, Zeng S, Shen JJ, Lee TL, Lau CS, Chan TM, Leung AM, Mok CC, Wong SN, Lee KW, Ho MH, Lee PP, Chung BH, Chong CY, Wong RW, Mok MY, Wong WH, Tong KL, Tse NK, Li XP, Avihingsanon Y, Rianthavorn P, Deekajorndej T, Suphapeetiporn K, Shotelersuk V, Ying SK, Fung SK, Lai WM, Wong CM, Ng IO, Garcia-Barcelo MM, Cherny SS, Tam PK, Sham PC, Yang S, Ye DQ, Cui Y, Zhang XJ, Lau YL, <b>*Yang W</b>. Meta-analysis of GWAS on two Chinese populations followed by replication identifies novel genetic variants on the X chromosome associated with systemic lupus erythematosus. <b>Hum Mol Genet</b>. 2015 Jan 1;24(1):274-84. doi: 10.1093/hmg/ddu429. Epub 2014 Aug 22. PubMed PMID: 25149475.</li>
+
+				<li style="margin-bottom:3em"><b>*Yang W</b>, *Lau YL. Solving the genetic puzzle of systemic lupus erythematosus. <b>Pediatr Nephrol</b>. 2015 Oct;30(10):1735-48. doi: 10.1007/s00467-014-2947-8. Epub 2014 Sep 20. Review. PubMed PMID: 25239301</li>
+
+				<li style="margin-bottom:3em">Zhang Y, Yang J, Zhang J, Sun L, Hirankarn N, Pan HF, Lau CS, Chan TM, Lee TL, Leung AM, Mok CC, Zhang L, Wang Y, Shen JJ, Wong SN, Lee KW, Ho MH, Lee PP, Chung BH, Chong CY, Wong RW, Mok MY, Wong WH, Tong KL, Tse NK, Li XP, Avihingsanon Y, Rianthavorn P, Deekajorndej T, Suphapeetiporn K, Shotelersuk V, Ying SK, Fung SK, Lai WM, Wong CM, Ng IO, Garcia-Barcelo MM, Cherny SS, Cui Y, Sham PC, Yang S, Ye DQ, Zhang XJ, Lau YL, <b>*Yang W</b>. Genome-wide search followed by replication reveals genetic interaction of CD80 and ALOX5AP associated with systemic lupus erythematosus in Asian populations. <b>Ann Rheum Dis</b>. 2016 May;75(5):891-8. doi: 10.1136/annrheumdis-2014-206367. Epub 2015 Apr 10. PubMed PMID: 25862617.</li>
+
+				<li style="margin-bottom:3em">Zhang J, Zhang L, Zhang Y, Yang J, Guo M, Sun L, Pan HF, Hirankarn N, Ying D, Zeng S, Lee TL, Lau CS, Chan TM, Leung AM, Mok CC, Wong SN, Lee KW, Ho MH, Lee PP, Chung BH, Chong CY, Wong RW, Mok MY, Wong WH, Tong KL, Tse NK, Li XP, Avihingsanon Y, Rianthavorn P, Deekajorndej T, Suphapeetiporn K, Shotelersuk V, Ying SK, Fung SK, Lai WM, Garcia-Barceló MM, Cherny SS, Sham PC, Cui Y, Yang S, Ye DQ, Zhang XJ, *Lau YL, <b>*Yang W</b>. Gene-based meta-analysis of genome-wide association study data identifies independent single-nucleotide polymorphisms in ANXA6 as being associated with systemic lupus erythematosus in Asian populations. <b>Arthritis & Rheumatol</b>. 2015 Nov;67(11):2966-77. doi: 10.1002/art.39275. PubMed PMID: 26202167.</li>
+
+				<li style="margin-bottom:3em">Morris DL, Sheng Y, Zhang Y, Wang YF, Zhu Z, Tombleson P, Chen L, Cunninghame Graham DS, Bentham J, Roberts AL, Chen R, Zuo X, Wang T, Wen L, Yang C, Liu L, Yang L, Li F, Huang Y, Yin X, Yang S, Rönnblom L, Fürnrohr BG, Voll RE, Schett G, Costedoat-Chalumeau N, Gaffney PM, Lau YL, Zhang X, <b>*Yang W</b>, *Cui Y, *Vyse TJ. Genome-wide association meta-analysis in Chinese and European individuals identifies ten new loci associated with systemic lupus erythematosus. <b>Nat Genet</b>.  2016 Aug;48(8):940-946. doi: 10.1038/ng.3603. Epub 2016 Jul 11. PubMed PMID: 27399966; PubMed Central PMCID: PMC4966635.</li>
+
+				<li style="margin-bottom:3em">Wang YF, Zhang Y, Zhu Z, Wang TY, Morris DL, Shen JJ, Zhang H, Pan HF, Yang J, Yang S, Ye DQ, Vyse TJ, Cui Y, Zhang X, Sheng Y, Lau YL, <b>*Yang W</b>. Identification of ST3AGL4, MFHAS1, CSNK2A2 and CD226 as loci associated with systemic lupus erythematosus (SLE) and evaluation of SLE genetics in drug repositioning. <b>Ann Rheum Dis</b>. 2018 Jul;77(7):1078-1084. doi: 10.1136/annrheumdis-2018-213093. Epub 2018 Apr 6. PubMed PMID: 29625966.</li>
+
+				<li style="margin-bottom:3em">Wang YF, Lau YL, <b>*Yang W</b>. Genetic studies on systemic lupus erythematosus in East Asia point to population differences in disease susceptibility. <b>Am J Med Genet C Semin Med Genet</b>. 2019 Jun;181(2):262-268. doi: 10.1002/ajmg.c.31696. Epub 2019 Mar 21. PubMed PMID: 30897304.</li>
+
+				<li style="margin-bottom:3em">Wang YF, Zhang Y, Lin Z, Zhang H, Wang TY, Cao Y, Morris DL, Sheng Y, Yin X, Zhong SL, Gu X, Lei Y, He J, Wu Q, Shen JJ, Yang J, Lam TH, Lin JH, Mai ZM, Guo M, Tang Y, Chen Y, Song Q, Ban B, Mok CC, Cui Y, Lu L, Shen N, Sham PC, Lau CS, Smith DK, Vyse TJ, Zhang X, *Lau YL, <b>*Yang W</b>. Identification of 38 novel loci for systemic lupus erythematosus and genetic heterogeneity between ancestral groups. <b>Nat Commun</b>. 2021 Feb 3;12(1):772. doi: 10.1038/s41467-021-21049-y. PMID: 33536424; PMCID: PMC7858632.</li>
+
+				<li style="margin-bottom:3em">Song Q, Lei Y, Shao L, Li W, Kong Q, Lin Z, Qin X, Wei W, Hou F, Li J, Guo X, Mao Y, Cao Y, Liu Z, Zheng L, Liang R, Jiang Y, Liu Y, Zhang L, Yang J, Lau YL, Zhang Y, Ban B, Wang YF, <b>*Yang W</b>. Genome-wide association study on Northern Chinese identifies KLF2, DOT1L and STAB2 associated with systemic lupus erythematosus. <b>Rheumatology (Oxford)</b>. 2021 Jan 25:keab016. doi:10.1093/rheumatology/keab016. Epub ahead of print. PMID: 33493351.</li>
+
+				<li style="margin-bottom:3em">Wang YF, Wei W, Tangtanatakul P, Zheng L, Lei Y, Lin Z, Qian C, Qin X, Hou F, Zhang X, Shao L, Satproedprai N, Mahasirimongkol S, Pisitkun P, Song Q, Lau YL, Zhang Y, Hirankarn N, <b>Yang W</b>. Identification of Shared and Asian-Specific Loci for Systemic Lupus Erythematosus and Evidence for Roles of Type III Interferon Signaling and Lysosomal Function in the Disease: A Multi-Ancestral Genome-Wide Association Study. <b>Arthritis Rheumatol</b>. 2022 May;74(5):840-848. doi: 10.1002/art.42021. Epub 2022 Mar 29. PMID: 34783190.</li>
+			</ol>
+			
+			<hr>
+			<p style="font-size:1.5em; font-weight:bold">Second Part of Publication</p>
+			<p>Genomic data analysis and bioinformatics</p>
+			<ol style="line-height:2" type=1>
+				<li style="margin-bottom:3em"><b>Yang W</b>, Ying D, Lau YL. In-depth cDNA library sequencing provides quantitative gene expression profiling in cancer biomarker discovery. <b>Genomics Proteomics Bioinformatics</b>. 2009 Jun;7(1-2):1-12. doi: 10.1016/S1672-0229(09)00003-5. PubMed PMID: 19591787; PubMed Central PMCID: PMC5054226.</li>
+
+				<li style="margin-bottom:3em">Zhang L, <b>Yang W</b>, Ying D, Cherny SS, Hildebrandt F, Sham PC, Lau YL. Homozygosity mapping on a single patient: identification of homozygous regions of recent common ancestry by using population data. <b>Hum Mutat</b>. 2011 Mar;32(3):345-53. doi: 10.1002/humu.21432. PubMed PMID: 21309031; PubMed Central PMCID: PMC3357498.</li>
+
+				<li style="margin-bottom:3em">Zhang L, Zhang J, Yang J, Ying D, Lau YL, <b>*Yang W</b>. PriVar: a toolkit for prioritizing SNVs and indels from next-generation sequencing data. <b>Bioinformatics</b>. 2013 Jan 1;29(1):124-5. doi: 10.1093/bioinformatics/bts627. Epub 2012 Oct 25. PubMed PMID: 23104884.</li>
+
+				<li style="margin-bottom:3em">Huang Y, Yang J, Ying D, Zhang Y, Shotelersuk V, Hirankarn N, Sham PC, Lau YL, <b>*Yang W</b>. HLAreporter: a tool for HLA typing from next generation sequencing data. <b>Genome Med</b>. 2015 Mar 16;7(1):25. doi: 10.1186/s13073-015-0145-3. eCollection 2015. PubMed PMID: 25908942; PubMed Central PMCID: PMC4407542.</li>
+
+				<li style="margin-bottom:3em">Ying D, Sham PC, Smith DK, Zhang L, Lau YL, <b>*Yang W</b>. HaploShare: identification of extended haplotypes shared by cases and evaluation against controls. <b>Genome Biol</b>. 2015 May 9;16:92. doi: 10.1186/s13059-015-0662-9. PubMed PMID: 25956955; PubMed Central PMCID: PMC4432975.</li>
+
+				<li style="margin-bottom:3em">Chen R, Lau YL, Zhang Y, <b>*Yang W</b>. SRinversion: a tool for detecting short inversions by splitting and re-aligning poorly mapped and unmapped sequencing reads. <b>Bioinformatics</b>. 2016 Dec 1;32(23):3559-3565. Epub 2016 Aug 8. PubMed PMID: 27503227.</li>
+
+				<li style="margin-bottom:3em">Shen JJ, Wang TY, <b>*Yang W</b>. Regulatory and evolutionary signatures of sex-biased genes on both the X chromosome and the autosomes. <b>Biol Sex Differ</b>. 2017 Nov 2;8(1):35. doi: 10.1186/s13293-017-0156-4. PubMed PMID: 29096703; PubMed Central PMCID: PMC5668987.</li>
+
+				<li style="margin-bottom:3em">Shen JJ, Yang C, Wang YF, Wang TY, Guo M, Lau YL, Zhang X, *Sheng Y， <b>*Yang W</b>. HLA-IMPUTER: an easy to use web application for HLA imputation and association analysis using population-specific reference panels. <b>Bioinformatics</b>. 2019 Apr 1;35(7):1244-1246.</li>
+
+				<li style="margin-bottom:3em">Shen JJ, Wang YF, <b>*Yang W</b>. Sex-Interacting mRNA- and miRNA-eQTLs and Their Implications in Gene Expression Regulation and Disease. <b>Front Genet</b>. 2019 Apr 9;10:313. doi: 10.3389/fgene.2019.00313. eCollection 2019. PubMed PMID: 31024623; PubMed Central PMCID: PMC6465513.</li>
+
+				<li style="margin-bottom:3em">Wang TY, Wang YF, Zhang Y, Shen JJ, Guo M, Yang J, Lau YL, <b>*Yang W</b>. Identification of Regulatory Modules That Stratify Lupus Disease Mechanism through Integrating Multi-Omics Data. <b>Mol Ther Nucleic Acids</b>. 2019 Nov 27;19:318-329.</li>
+
+				<li style="margin-bottom:3em">Ma W, Lau YL, <b>*Yang W</b>, *Wang YF. Random forests algorithm boosts genetic risk prediction of systemic lupus erythematosus. <b>Front Genet</b>. 2022 Aug 15;13:902793. doi: 10.3389/fgene.2022.902793. PMID: 36046232; PMCID: PMC9421562.</li>
+
+				<li style="margin-bottom:3em">Cao Y, Ha SY, So CC, Tong MT, Tang CS, Zhang H, Liang R, Yang J, Chung BH, Chan GC, Lau YL, Garcia-Barcelo MM, Ma ES, Sucharitchan P, Hirankarn N, <b>*Yang W</b>. NGS4THAL, a One-Stop Molecular Diagnosis and Carrier Screening Tool for Thalassemia and Other Hemoglobinopathies by Next-Generation Sequencing. <b>J Mol Diagn</b>. 2022 Oct;24(10):1089-1099. doi: 10.1016/j.jmoldx.2022.06.006. Epub 2022 Jul 19. PMID: 35868510. </li>
+
+				<li style="margin-bottom:3em">Liu Z, Shao L, Hou F, Li W, Wang YF, Feng H, Wang FQ, Lei Y, Zheng L, Liang R, Li J, Guo X, Zhang L, Zhang Y, Yang J, Qin X, Wei W, Yang X, Dang X, Ma W, She CH, Kong Q, Yang J, Ban B, Lau YL, Song Q, <b>*Yang W</b>. Transcriptomic Features of systemic lupus erythematosus Patients in Flare and Changes during Acute In-Hospital Treatment. <b>Rheumatology (Oxford)</b>. 2023 Dec 23:kead704. doi: 10.1093/rheumatology/kead704. Epub ahead of print. PMID: 38141203.</li>
+			</ol>
+		</div>
+	</div>
+	
+	<div id="Softwares" style="display:none">
+		<div style="padding-left:10em;padding-right:10em" align="justify">
+			<p style="font-size:1.5em; font-weight:bold">Softwares</p>
+			<p>Our lab has the following representative released software!</p>
+			<table style="width:100%;display:flex">
+				<tr>
+					<td style="width:15%;vertical-align:top;padding-top:1em"><a>HLA-IMPUTER</a></td>
+					<td>
+						<p style="font-weight:bold">Description:HLA-IMPUTER</p>
+						<p>implements the HIBAG algorithm for HLA allele imputation with different population specific reference panels, including a new Han Chinese reference panel derived from 10,689 samples. We provide a simple convenient platform for researchers to impute HLA alleles and perform association analysis.</p>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:15%;vertical-align:top;padding-top:1em"><a>HRRA</a></td>
+					<td>
+						<p style="font-weight:bold">Description:HLA-IMPUTER</p>
+						<p>Homozygous Regions of Recent Ancestry (HRRA) implements an algorithm to estimate the HF of any homozygous region in a patient's genome, making use of information from unaffected individuals from the same population rather than relying on data from family members.</p>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:15%;vertical-align:top;padding-top:1em"><a>EcMap</a></td>
+					<td>
+						<p style="font-weight:bold">Description:HLA-IMPUTER</p>
+						<p>This is a simulation program that allows users to evaluate the size of their families for linkage analysis. The software simulates homologous recombination and inheritance process based on a Chi-square model simulating physical interference but not chromatid interference. The genetic distance map was obtained from HapMap and reflects average male and female genetic distances for each chromosome. It answers the following questions: based on the family size and expected penetrance, what would be the probability that the mutation region is the only linked region? If not so, how many regions one would usually have to deal with? What would be the sizes of these regions (cM)?</p>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:15%;vertical-align:top;padding-top:1em"><a>HaploShare</a></td>
+					<td>
+						<p style="font-weight:bold">Description:HLA-IMPUTER</p>
+						<p>Recent founder mutations may play important roles in complex diseases and Mendelian disorders. Detecting shared haplotypes that are identical by descent (IBD) could facilitate discovery of these mutations. Several programs address this, but are usually limited to detecting pair-wise shared haplotypes and not providing a comparison of cases and controls. We present a novel algorithm and software package, HaploShare, which detects extended haplotypes that are shared by multiple individuals, and allows comparisons between cases and controls. Testing on simulated and real cases demonstrated significant improvements in detection power and reduction of false positive rate by HaploShare relative to other programs.</p>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:15%;vertical-align:top;padding-top:1em"><a>EFIN</a></td>
+					<td>
+						<p style="font-weight:bold">Description:HLA-IMPUTER</p>
+						<p>SRinversion, a framework to analyze poorly mapped or unmapped reads by splitting and re-aligning them for the purpose of inversion detection. SRinversion is very sensitive to small inversions and can detect those less than 10 bp in size. We applied SRinversion to both simulated data and high-coverage sequencing data from the 1000 Genomes Project and compared the results with those from Pindel, BreakDancer, DELLY, Gustaf and MID. A better performance of SRinversion was achieved for both datasets for the detection of small inversions.</p>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:15%;vertical-align:top;padding-top:1em"><a>PriVar</a></td>
+					<td>
+						<p style="font-weight:bold">Description:HLA-IMPUTER</p>
+						<p>Recent founder mutations may play important roles in complex diseases and Mendelian disorders. Detecting shared haplotypes that are identical by descent (IBD) could facilitate discovery of these mutations. Several programs address this, but are usually limited to detecting pair-wise shared haplotypes and not providing a comparison of cases and controls. We present a novel algorithm and software package, HaploShare, which detects extended haplotypes that are shared by multiple individuals, and allows comparisons between cases and controls. Testing on simulated and real cases demonstrated significant improvements in detection power and reduction of false positive rate by HaploShare relative to other programs.</p>
+						<a style="font-weight:bold">Documentation</a><br>
+						<a style="font-weight:bold">Resource</a><br>
+						<a style="font-weight:bold">Example</a><br>
+						<a style="font-weight:bold">Source Code</a>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:15%;vertical-align:top;padding-top:1em"><a>HLAreporter</a></td>
+					<td>
+						<p style="font-weight:bold">Description:HLA-IMPUTER</p>
+						<p>Human leukocyte antigen (HLA) typing from next generation sequencing (NGS) data has the potential for widespread applications. Here we introduce a novel tool (HLAreporter) for HLA typing from NGS data based on read-mapping using a comprehensive reference panel containing all known HLA alleles, followed by de novo assembly of the gene-specific short reads. Accurate HLA typing at high-digit resolution was achieved when it was tested on publicly available NGS data, outperforming other newly developed tools such as HLAminer and PHLAT.</p>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:15%;vertical-align:top;padding-top:1em"><a>KGG/GATES modification (region-based test)</a></td>
+					<td>
+						<p style="font-weight:bold">Description:HLA-IMPUTER</p>
+						<p><a style="font-weight:bold">Option1</a>: download this KGG package in a whole.</p>
+						<p  align="left"><a style="font-weight:bold">Option2</a>: download this genomic-region annotation file an replace the file of '/kgg3d5/resources/hg19_refGene.txt.gz' from KGG.</p>
+						<p><a style="font-weight:bold"	>Note</a>: don't let KGG's update overwrite the modified file 'hg19_refGene.txt.gz'.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div id="Contact" style="display:none">
+		<div style="padding-left:10em;padding-right:10em" align="justify">
+			<ul style="line-height:2em">
+				<li style="margin-bottom:1em"><b>Email:</b> yangwl@hku.hk</li>
+				<li style="margin-bottom:1em"><b>Tel:</b> (852) 28315077</li>
+				<li style="margin-bottom:1em"><b>Fax:</b> (852) 28198142</li>
+				<li style="margin-bottom:1em"><b>Address:</b> Department of Paediatrics & Adolescent Medicine Office 5, 1/F, The Hong Kong Jockey Club Building for Interdisciplinary Research, 5 Sassoon Road, Hong Kong</li>
+				<li style="margin-bottom:1em"><b>Office:</b> L7-55 Paediatrics, Lab Block, Faculty of Medicine, 21 Sassoon Road, Pokfulam, Hong Kong </li>
+			</ul>
+		</div>
+		<br><br>
+		<div style="width:85%;padding-left:7.5%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Jockey%20club%20interdisciplinary)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe></div>
+	</div>
+	
+	<div id="Recruitment" style="display:none">
+		<div style="padding-left:10em;padding-right:10em" align="justify">
+			<div style="line-height:3em">
+				<p style="font-size:1.5em;font-weight:bold">Wellcome</p>
+				<p>Interested candidates are welcome to apply to our PhD or Mphil programs in human genetics, genome biology, and bioinformatics. The application deadline for the main round is December 1st, with two clearance rounds ending in April and August. The following two tracks are available in our laboratory:</p>
+				<p>1. Computational biology, statistical genetics and omics data analysisStudents with computation, statistics and bioinformatics background are invited to join an interdisciplinary team to work on analysis of omics data, development of novel bioinformatics tools and identifying pivotal changes and pathways that are essential for disease development</p>
+				<p>2. Human genetics, genomics and autoimmunityStudents with genetics, molecular biology, or immunology background are invited to work on studies of autoimmune diseases such as SLE, using tools such as functional characterizations of susceptibility genes, elucidation of cellular and molecular aberrations of patient samples, and analyses of omics data to try to understand disease pathogenesis.</p>
+			</div>
+			<br><br><br>
+			<table style="width:100%;display:flex">
+				<tr>
+					<td style="font-weight:bold;width:40%;vertical-align:top"><a>Links for application</a></td>
+					<td>
+						<a style="text-decoration:underline">PhD Programmes</a><br>
+						<a style="text-decoration:underline">Why HKU?</a><br>
+						<a style="text-decoration:underline">Housing for Postgraduate Students </a><br>
+						<br>
+						<a style="text-decoration:underline">Li Ka Shing Faculty of Medicine</a><br>
+						<a style="text-decoration:underline">Department of Paediatrics and Adolescent Medicine</a><br>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div id="UsefulLinks" style="display:none">
+		<div style="padding-left:8em;padding-right:8em">
+			<div style="display:flex">
+				<div >
+					<img src="src/HKU_GraduateSchool.jpg" style="width:18em;height:18em;object-fit:cover">
+				</div>
+				<div style="padding-left:10%">
+					<p style="font-size:1.5em; font-weight:bold">01</p>
+					<p style="font-size:1.5em; font-weight:bold">HKU Graduate School</p>
+					<p align="justify">Established by the Council in September 1998, the Graduate School is responsible for the quality assurance and quality enhancement and overall management of the research postgraduate (RPg) degrees, viz. Doctor of Philosophy (PhD) and Master of Philosophy (MPhil). </p>
+				</div>
+			</div>
+			<hr class="hr1">
+			<div style="display:flex">
+				<div style="width:50%;padding-right:10%">
+					<p style="font-size:1.5em; font-weight:bold">02</p>
+					<p style="font-size:1.5em; font-weight:bold">LI Ka Shing Faculty of Medicine</p>
+					<p align="justify">Medical education has been at the heart of The University of Hong Kong's history since our inception and the Li Ka Shing Faculty of Medicine has been a leader in medical education and research throughout our 130+ years of history.</p>
+				</div>
+				<div align="right">
+					<img src="src/HKU_Med.jpg" style="width:18em;height:18em;object-fit:cover;float:right">
+				</div>
+			</div>
+			<hr class="hr1">
+			<div style="display:flex">
+				<div >
+					<img src="src/HKU_Paed.png" style="width:18em;height:18em;object-fit:cover">
+				</div>
+				<div style="padding-left:10%">
+					<p style="font-size:1.5em; font-weight:bold">03</p>
+					<p style="font-size:1.5em; font-weight:bold">Department of Pediatrics and Adolescent Medicine</p>
+					<p><b>Address:</b> NCB 115, Queen Mary Hospital, 102 Pokfulam Rd, HK</p>
+					<p><b>Email:</b>  paedoff@hku.hk</p>
+					<p><b>General Office:</b> (852) 225 54295</p>
+				</div>
+			</div>
+			<hr class="hr1">
+			<div style="display:flex">
+				<div style="width:50%;padding-right:10%">
+					<p style="font-size:1.5em; font-weight:bold">04</p>
+					<p style="font-size:1.5em; font-weight:bold">The University of Hong Kong</p>
+					<p align="justify">The University of Hong Kong, Asia’s Global University, delivers impact through internationalisation, innovation and interdisciplinarity.  It attracts and nurtures global scholars through excellence in research, teaching and learning, and knowledge exchange.  It makes a positive social contribution through global presence, regional significance and engagement with the rest of China.</p>
+				</div>
+				<div align="right">
+					<img src="src/HKU.png" style="width:18em;height:18em;object-fit:cover;float:right">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="foot">
+		<p align="center" style="background-color:#4F8494; color: white; padding-top: 0.5em; padding-bottom: 0.5em">@ 2024 Yang's Lab | Updated on Jan 2024</p>
+	</div>
+	
+	<script>
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+		function showSlides(n) {
+		  let i;
+		  let slides = document.getElementsByClassName("mySlides");
+		  let dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		}
+		function toHome(){
+			var Home = document.getElementById("Home");
+			var Members = document.getElementById("Members");
+			var Publications = document.getElementById("Publications");
+			var Softwares = document.getElementById("Softwares");
+			var Contact = document.getElementById("Contact");
+			var Recruitment = document.getElementById("Recruitment");
+			var UsefulLinks = document.getElementById("UsefulLinks");
+			var x = document.getElementById("Home");
+			if (x.style.display === "none"){
+				Home.style.display = "none";
+				Members.style.display = "none";
+				Publications.style.display = "none";
+				Softwares.style.display = "none";
+				Contact.style.display = "none";
+				Recruitment.style.display = "none";
+				UsefulLinks.style.display="none";
+				x.style.display = "block";
+			}
+			else{
+				;
+			}
+		}
+		function toMembers(){
+			var Home = document.getElementById("Home");
+			var Members = document.getElementById("Members");
+			var Publications = document.getElementById("Publications");
+			var Softwares = document.getElementById("Softwares");
+			var Contact = document.getElementById("Contact");
+			var Recruitment = document.getElementById("Recruitment");
+			var UsefulLinks = document.getElementById("UsefulLinks");
+			var x = document.getElementById("Members");
+			if (x.style.display === "none"){
+				Home.style.display = "none";
+				Members.style.display = "none";
+				Publications.style.display = "none";
+				Softwares.style.display = "none";
+				Contact.style.display = "none";
+				Recruitment.style.display = "none";
+				UsefulLinks.style.display="none";
+				x.style.display = "block";
+			}
+			else{
+				;
+			}
+		}
+		function toPublications(){
+			var Home = document.getElementById("Home");
+			var Members = document.getElementById("Members");
+			var Publications = document.getElementById("Publications");
+			var Softwares = document.getElementById("Softwares");
+			var Contact = document.getElementById("Contact");
+			var Recruitment = document.getElementById("Recruitment");
+			var UsefulLinks = document.getElementById("UsefulLinks");
+			var x = document.getElementById("Publications");
+			if (x.style.display === "none"){
+				Home.style.display = "none";
+				Members.style.display = "none";
+				Publications.style.display = "none";
+				Softwares.style.display = "none";
+				Contact.style.display = "none";
+				Recruitment.style.display = "none";
+				UsefulLinks.style.display="none";
+				x.style.display = "block";
+			}
+			else{
+				;
+			}
+		}
+		function toSoftwares(){
+			var Home = document.getElementById("Home");
+			var Members = document.getElementById("Members");
+			var Publications = document.getElementById("Publications");
+			var Softwares = document.getElementById("Softwares");
+			var Contact = document.getElementById("Contact");
+			var Recruitment = document.getElementById("Recruitment");
+			var UsefulLinks = document.getElementById("UsefulLinks");
+			var x = document.getElementById("Softwares");
+			if (x.style.display === "none"){
+				Home.style.display = "none";
+				Members.style.display = "none";
+				Publications.style.display = "none";
+				Softwares.style.display = "none";
+				Contact.style.display = "none";
+				Recruitment.style.display = "none";
+				UsefulLinks.style.display="none";
+				x.style.display = "block";
+			}
+			else{
+				;
+			}
+		}
+		function toContact(){
+			var Home = document.getElementById("Home");
+			var Members = document.getElementById("Members");
+			var Publications = document.getElementById("Publications");
+			var Softwares = document.getElementById("Softwares");
+			var Contact = document.getElementById("Contact");
+			var Recruitment = document.getElementById("Recruitment");
+			var UsefulLinks = document.getElementById("UsefulLinks");
+			var x = document.getElementById("Contact");
+			if (x.style.display === "none"){
+				Home.style.display = "none";
+				Members.style.display = "none";
+				Publications.style.display = "none";
+				Softwares.style.display = "none";
+				Contact.style.display = "none";
+				Recruitment.style.display = "none";
+				UsefulLinks.style.display="none";
+				x.style.display = "block";
+			}
+			else{
+				;
+			}
+		}
+		function toRecruitment(){
+			var Home = document.getElementById("Home");
+			var Members = document.getElementById("Members");
+			var Publications = document.getElementById("Publications");
+			var Softwares = document.getElementById("Softwares");
+			var Contact = document.getElementById("Contact");
+			var Recruitment = document.getElementById("Recruitment");
+			var UsefulLinks = document.getElementById("UsefulLinks");
+			var x = document.getElementById("Recruitment");
+			if (x.style.display === "none"){
+				Home.style.display = "none";
+				Members.style.display = "none";
+				Publications.style.display = "none";
+				Softwares.style.display = "none";
+				Contact.style.display = "none";
+				Recruitment.style.display = "none";
+				UsefulLinks.style.display="none";
+				x.style.display = "block";
+			}
+			else{
+				;
+			}
+		}
+		function toUsefulLinks(){
+			var Home = document.getElementById("Home");
+			var Members = document.getElementById("Members");
+			var Publications = document.getElementById("Publications");
+			var Softwares = document.getElementById("Softwares");
+			var Contact = document.getElementById("Contact");
+			var Recruitment = document.getElementById("Recruitment");
+			var UsefulLinks = document.getElementById("UsefulLinks");
+			var x = document.getElementById("UsefulLinks");
+			if (x.style.display === "none"){
+				Home.style.display = "none";
+				Members.style.display = "none";
+				Publications.style.display = "none";
+				Softwares.style.display = "none";
+				Contact.style.display = "none";
+				Recruitment.style.display = "none";
+				UsefulLinks.style.display="none";
+				x.style.display = "block";
+			}
+			else{
+				;
+			}
+		}	
+	</script>
+	
+</body>
+</html>
